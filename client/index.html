@@ -19,29 +19,43 @@
         rel="stylesheet">
 </head>
 <body>
-      <nav class="navbar">
-		<div class="navdiv">
-			<div class="logo"><a href="#">Lio</a> </div>
-			<ul>
-				<li><a href="#">Features</a></li>
-				<li><a href="#">Resources</a></li>
-				<li><a href="#">Solutions</a></li>
-                        <li><a href="#">Enterprise</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Login</a></li>
-			</ul>
-		</div>
-	</nav>
+  <nav class="navbar">
+    <div class="navdiv">
+      <div class="logo"><a href="#">Lio</a></div>
+      <ul>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="#">Solutions</a></li>
+        <li><a href="#">Enterprise</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#" id="loginBtn">Login</a></li>
+      </ul>
+    </div>
+  </nav>
 
-      <div class="hero">
-            <div>
-                  <p></p>
-            </div>
-      </div>
-      
+  <div class="hero">
+    <div class="login-container" id="loginContainer">
+      <h2>Login to Your Account</h2>
+      <form class="login-form">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <div class="or">or</div>
+      <div class="social-login">
+            <button class="google"><i class='bx bxl-google'></i>Continue with Google</button>
+            <button class="facebook"><i class='bx bxl-facebook-square'></i>Continue with Facebook</button>
+            <button class="github"><i class='bx bxl-github'></i>Continue with GitHub</button>
+          </div>
+          
+      <div class="signup-link">Don't have an account? <a href="#" id="signupLink">Sign Up</a></div>
+      <div class="forgot-password"><a href="#">Forgot your password?</a></div>
+    </div>
+    <div class="signup-container" id="signupContainer">
+      <!-- Signup form content -->
+    </div>
+  </div>
 
   <script src="script.js"></script>
-
-  
 </body>
 </html>

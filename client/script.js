@@ -1,58 +1,26 @@
-function addTask() {
-  var taskName = document.getElementById('taskName').value;
-  if (taskName.trim() === '') {
-    alert('Please enter a task name');
-    return;
-  }
+document.getElementById('loginBtn').addEventListener('click', function() {
+  var loginContainer = document.getElementById('loginContainer');
+  var signupContainer = document.getElementById('signupContainer');
   
-  var taskItem = document.createElement('li');
-  taskItem.classList.add('task-item');
-  taskItem.textContent = taskName;
-  
-  var editBtn = document.createElement('button');
-  editBtn.textContent = 'Edit';
-  editBtn.classList.add('edit-btn');
-  editBtn.onclick = function() {
-    editTask(taskItem);
-  };
-  taskItem.appendChild(editBtn);
-  
-  var deleteBtn = document.createElement('button');
-  deleteBtn.textContent = 'Delete';
-  deleteBtn.classList.add('delete-btn');
-  deleteBtn.onclick = function() {
-    deleteTask(taskItem);
-  };
-  taskItem.appendChild(deleteBtn);
-  
-  var priority = document.getElementById('priority').value;
-  taskItem.classList.add('priority-' + priority.toLowerCase());
-  
-  var taskList = document.getElementById('taskList');
-  taskList.appendChild(taskItem);
-  document.getElementById('taskName').value = '';
-  
-  makeResponsive();
-}
-
-function deleteTask(taskItem) {
-  if (confirm("Are you sure you want to delete this task?")) {
-    taskItem.remove();
-  }
-}
-
-function editTask(taskItem) {
-  var newTaskName = prompt("Enter the new task name:");
-  if (newTaskName !== null) {
-    taskItem.textContent = newTaskName;
-  }
-}
-
-function makeResponsive() {
-  var screenWidth = window.innerWidth;
-  if (screenWidth < 600) {
-    document.getElementById('taskList').classList.add('responsive-task-list');
+  // Toggle visibility of login form
+  if (loginContainer.classList.contains('show-login')) {
+    loginContainer.classList.remove('show-login');
   } else {
-    document.getElementById('taskList').classList.remove('responsive-task-list');
+    loginContainer.classList.add('show-login');
+    signupContainer.classList.remove('show-signup'); // Ensure signup form is hidden when showing login form
   }
-}
+});
+
+document.getElementById('signupLink').addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent the default link behavior
+  var signupContainer = document.getElementById('signupContainer');
+  var loginContainer = document.getElementById('loginContainer');
+
+  // Toggle visibility of signup form
+  if (signupContainer.classList.contains('show-signup')) {
+    signupContainer.classList.remove('show-signup');
+  } else {
+    signupContainer.classList.add('show-signup');
+    loginContainer.classList.remove('show-login'); // Ensure login form is hidden when showing signup form
+  }
+});
