@@ -149,14 +149,14 @@ li a {
   display: flex;
   justify-content:center ;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 50px;
   overflow: hidden;
-  animation: moveLeftToRight 30s linear infinite;
+  animation: moveLeftToRight 8s linear infinite;
 }
 
 .client-logo img {
-  width: 2cm; 
-  height: 2cm;
+  width: 3cm; 
+  height: 3cm;
   margin: 0 15px;
   opacity: 1;
   border-radius: 20px;
@@ -172,4 +172,77 @@ li a {
   0% {
     transform: translateX(calc(-100% + (100vw - 100%)));
   }
+}
+
+
+.user-reviews {
+  margin-top: 50px;
+  overflow: hidden;
+  color: white;
+  font-weight: bold;
+  margin-left: 40px;
+  margin-right: 40px;
+  
+
+}
+
+.user-reviews h1 {
+  margin-bottom: 20px;
+  display: inline;
+  font-weight: bold;
+  font-size: 40px;
+  margin-left: 10px;
+}
+
+.review-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; 
+  transition: transform 0.5s ease;
+}
+
+.review {
+  width: calc(25% - 20px); 
+  margin: 10px;
+  text-align: left; 
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: px;
+  padding-left: 10px;
+  background-color: #f4d4f8;
+  border-radius: 10px;
+}
+
+.review img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.review p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.prev-btn,
+.next-btn {
+  background-color: #f1f1f1;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background-color: #ddd;
+}
+
+.hidden {
+  display: none;
 }
